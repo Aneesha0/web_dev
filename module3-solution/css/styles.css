@@ -1,0 +1,32 @@
+.navbar-brand h1{
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.navbar>.container{
+margin-left: 15px;
+}
+
+h2{
+    margin: 25px auto;
+}
+
+.menu-items{
+    background-color: aqua;
+    margin: 5px;
+    border: 2px solid black;
+    text-align: center;
+    font-size: large;
+}
+
+.first>.content{
+    border: 2px solid black;
+    margin: 15px auto;
+    padding: 15px 25px;
+    background-color: cadetblue;
+}
+
+.desc{
+    margin-top: 25px;
+}
