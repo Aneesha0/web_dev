@@ -1,0 +1,545 @@
+<a>		#anchor tag
+<meta charset="utf-8">   #used inside the head tag and is used to define the type of characters used in the webpage
+
+<meta name="viewport" content"width=device-width initial-scale=1">			#to turnoff zoom out feature in the mobile device
+
+
+
+<section tag="some ID" >			#section tag is a phrasing content used
+
+&copy;   #for identifying and displaying copyright symbol
+&quot;	 #for identifying and displaying "
+&lt;     #for identifying and displaying <
+&gt;     #for identifying and displaying >
+&nbsp;	 #for identifying and displaying non breaakable space
+
+<a href="site locaion" title="Description of the link" target="_blank">name ogf the link of the link</a>	#<a> tag is both a flow contant as well as a phrasing content. target is used for deciding whether to redirect or open an new tab
+<a href="#some ID">   #used to link some section of the internal webpage with that ID
+<a name="some ID">   #used to link other links to this part of the web page
+
+<img src="url of the image" width="200" height="200" alt="description">			#inline element width and height are useful to reserve some space and tell the web page. so that no jumping occurs 
+
+element{						#element can be the tags for which the rule is to be applied
+	color: blue;				#changes text color
+	font-size: 20px/2em/2vw !important; #the important rule prioritizes this attribute over all the other font-size rules applied to the element(ignores specificity) 	#vw is the relative size wrt viewport 2vwis 2% of the current viewport		
+	font-family: Times New Roman,Times,Seriff;		#the extra are to specify other fonts if the defined font is not installed
+	width:200px;	
+	cursor: pointer				#changes the cursor to pointer
+	text-align:center;
+	text-decoration:none;		#removes any decoration like underline
+	font-style: italic;
+	display: block				#converts the default element into the specified element (eg in default <a>is inline but is also block type this rule changess the default into block	)
+	background-color: green;
+	list-style:none				#if the there are list used removes the bullets
+	opacity:.6; 
+	border: 1px solid blue		#creates a border with width 1 pixel and color solid blue
+	font-weight: bold(can also be numbers);			
+	margin-bottom:1px			#increases the gap by 1px in the bottom
+	text-transform: uppercase;
+	margin: 0;		#sets the margin of the box to 0		#the left and the right margin of two elements take the cumulative value while the top and the bottom takes the highest out of the 2
+	padding: 0;		#sets the padding size of the box to 0
+	box-sizing: border-box/content-box;			#sets  the default box to use when specifying widt or height(does not inherit)
+	overflow: auto;			#used when the content overflows and directs the browser to scroll through the content
+	
+	background-image: url("some.png")
+	background-repeat: no-repeat		#sets the repitition of the image
+	background-position: top right		#sets the position of the image default being the center
+	background: url("some.png") no=repeat top right 			#every background property can be specified here
+	
+	float: right;		#floats the element to the right removing it from the original flow
+	clear: right/both		#specifies that no elemnet should be floating to the right of the element if so, it resumes the original flow
+	
+	position: relative/absolute;		#sets the positioning from static to relative(is not taken away from the flow)(relative to the initial position in the doc flow) or absolute(taken away fr om the flow)(relative to the element whose position is set to relative or absolute)(html has its position set to relative)
+	top: 50px			#moves the element 50px "FROM" the top
+	left: -50px		#moves the element 50px to the left
+	
+	border-radius:0		#sets the curve around the border to radius 0
+	text-shadow:
+	line-height: .75;		#decreses the height of the lines
+	verticle-align: middle;
+	
+	line-height: 2; 		#increases the line height
+	max-width: 250px;		#sets the max-width of the element after which it cannot be stretched
+}
+
+<style></style>   #inside yhis the css rules are defined
+
+.class_name{
+}				#the elements will have an attribute caleed class ="class_name" for which the rule is applied
+
+#name{
+}				#the elemts with the attribute id="name" will have the css rule applied
+
+.class_name,element{
+}						#group selectors
+
+element.class_name{
+}						#groups elements having the class="class_name"
+
+ele1>ele2{
+}						#groups ele2 which is a "direct" child of the ele1   <ele1><ele2>child of the element ele1</ele2></ele1>	
+
+ele1 ele2{
+}						#groups ele2 which is a descendent of ele1	can be applied to class_name and id also
+
+ele1+el2{				#the next sibling of ele1 which is ele2
+}
+
+class="a b"				#this element has 2 classes a and b and the rule applied to an element having both the classes looks like .a.b{}
+
+
+a:link,a:visited{}		#link and visited are pseudo classes that changes according to the rules when the user interacts with the web page
+a:hover,a:active{}		#when the user hovers over the a element, when the user clicks the a but not releases
+ele:nth-child(3){}		#selects the 3rd child in the ele elemnt the parameter for the class can be a number or words such as "odd" 
+
+<ele style="text-align: center;">		#inline styling
+
+<link rel="stylesheet" href="name_of_the_css">		#used to link a file that is external
+
+specificity rule (style,ID,Class,elementd)		#decides which rule gets executed by assigning number to the corresponding number of attribules mentioned
+
+color: #0000ff;		#rgb r-00, g-00, b-ff(16)	
+font-size: 24px(can be percent also with respect to the default(16px))
+font-size: 2em;(em increases the font-size by that number cumulative to the previous specification of font-size )	
+
+*{		#this selector is used when the the rule is to be applied to all the elemnets
+}
+
+@media(max-width: 800px){}			#like if statement if the condition is true executes the rules in them(can combine multiple cond by 'and' and ',')(donot overlap breakpoints)
+
+
+	{#bootstrap
+	<meta http-equiv="X-UV-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="(bootstrap.css)">
+	<link rel="stylesheet" href="(style.css)">			#user-defined
+
+	<script src="(jquerry file">		#to define the jqueety file
+	<script src="(bootstrap js file)">
+	<script src="(style js file)">			#user-defined
+	
+	#grid-system
+	<div class="container/container-fluid">			#evry html body should be inside the this
+		<div class="row">			#contains the columns that contain the content and has negative matgin to allign  the content in the container as well as that in the row
+			<div class="col-md-3"></div>			#the column contents that follow the 12 box rule
+		</div>
+	</div>						#any block level element can be used for the grid system 
+	}
+	
+#Bootstrap elemnets
+#for navbar		
+			
+<header>
+    <nav id="header-nav" class="navbar navbar-default">			#start of the nav bar
+      <div class="container">
+        <div class="navbar-header">								#for better mobile display
+          <a href="index.html" class="pull-left visible-md visible-lg">		#class=pull-left to align the brand-name to the left of the logo to floaat the logo	#class="visible-md" to make them visible if md
+            <div id="logo-img"></div>
+          </a>
+
+          <div class="navbar-brand">
+            <a href="index.html"><h1>David Chu's China Bistro</h1></a>
+            <p>
+              <img src="images/star-k-logo.png" alt="Kosher certification">
+              <span>Kosher Certified</span>
+            </p>
+          </div>
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">		#nav-toggle automatically positions it to the right side of the navbar-header #collapsed is not a bootstrapclass but a plugin  #mainly used in js for the toggle functionality 
+            <span class="sr-only">Toggle navigation</span>		#doesnot show in the browser and used only for screen readers.
+            <span class="icon-bar"></span>			#icon bar class are the horizontal buttons that are collapsed
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+        </div>
+		<div id="collapsable-nav" class="collapse navbar-collapse">		#all the navigation menus that are collapsed in the mobile mode		#is outside the navbar-header and is targeted by the data-target in the collapsed class		#the class="collapse navbar-collapse" is recomended by the bootstrap for collapsed menu
+           <ul id="nav-list" class="nav navbar-nav navbar-right">		#class="nav navbar-nav" tells that the ul is a component of navigation bar and the navbar-right pulls the nav bar components to the right
+            <li>		#class can be set to active which is a bootstrap method to indicate an active link
+              <a href="menu-categories.html">
+                <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>		#brings in an icon font that can be customized(can increse the size, give colors and is a vector based image)   #hides the break elemnt when the size is xs
+            </li>
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Awards</a>
+            </li>
+            <li id="phone" class="hidden-xs">
+              <a href="tel:410-602-5008">			#href="tel:any phone numbers", opens the call option and enables calling option
+                <span>410-602-5008</span></a><div>* We Deliver</div>
+            </li>
+          </ul><!-- #nav-list -->
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div id="call-btn" class="visible-xs">
+    <a class="btn" href="tel:410-602-5008">
+    <span class="glyphicon glyphicon-earphone"></span>
+    410-602-5008
+    </a>
+  </div>
+  <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
+  
+  <div id="main-content" class="container">
+    <div class="jumbotron">
+      <img src="images/jumbotron_768.jpg" alt="Picture of restaurant" class="img-responsive visible-xs">		#class="img-responsive" makes the image size responsive with the widyh and the height of the window
+    </div>
+	
+	<div id="home-tiles" class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="menu-categories.html"><div id="menu-tile"><span>menu</span></div></a>		#span is inside the div so that the div can be set relative and the span can be set absolute 
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="single-category.html"><div id="specials-tile"><span>specials</span></div></a>		#her div is set for width 100%which sets the div 100% wrt col div 
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <a href="https://www.google.com/maps/place/David+Chu's+China+Bistro/@39.3635874,-76.7138622,17z/data=!4m6!1m3!3m2!1s0x89c81a14e7817803:0xab20a0e99daa17ea!2sDavid+Chu's+China+Bistro!3m1!1s0x89c81a14e7817803:0xab20a0e99daa17ea" target="_blank">
+          <div id="map-tile">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3084.675372390488!2d-76.71386218529199!3d39.3635874269356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81a14e7817803%3A0xab20a0e99daa17ea!2sDavid+Chu&#39;s+China+Bistro!5e0!3m2!1sen!2sus!4v1452824864156" width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <span>map</span>
+          </div>
+
+        </a>
+      </div>
+    </div>
+
+  </div>
+  
+  <footer class="panel-footer">		#panel-footer is a bootstrap class
+    <div class="container">
+      <div class="row">
+        <section id="hours" class="col-sm-4">
+          <span>Hours:</span><br>
+          Sun-Thurs: 11:15am - 10:00pm<br>
+          Fri: 11:15am - 2:30pm<br>
+          Saturday Closed
+          <hr class="visible-xs">
+        </section>
+        <section id="address" class="col-sm-4">
+          <span>Address:</span><br>
+          7105 Reisterstown Road<br>
+          Baltimore, MD 21215
+          <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
+          <hr class="visible-xs">
+        </section>
+        <section id="testimonials" class="col-sm-4">
+          <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
+          <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
+        </section>
+      </div>
+      <div class="text-center">&copy; Copyright David Chu's China Bistro 2016</div>
+    </div>
+  </footer>
+  
+#both the index and the menu-categories have the same header and footer only change is the main-content 
+
+#main-content for the menu-categories
+
+<div id="main-content" class="container">
+    <h2 id="menu-categories-title" class="text-center">Menu Categories</h2>			#bootstrap way to center
+    <div class="text-center">
+      Substituting white rice with brown rice or fried rice after 3:00pm will be $1.50 for a pint and $2.50 for a quart.
+    </div>
+
+    <section class="row">
+      <div class="col-md-3 col-sm-4 col-xs-6 col-xxs-12">
+        <a href="single-category.html">
+          <div class="category-tile">
+            <img width="200" height="200" src="images/menu/B/B.jpg" alt="Lunch">
+            <span>Lunch</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </div>
+  
+#single-category has also same header and footer except some change in the main-content  
+  
+  <div id="main-content" class="container">
+    <h2 id="menu-categories-title" class="text-center">Lunch Menu</h2>
+    <div class="text-center">Lunch is not served until after 1pm.</div>
+
+    <section class="row">
+      <div class="menu-item-tile col-md-6">
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="menu-item-photo">
+              <div>D01</div>
+              <img class="img-responsive" width="250" height="150" src="images/menu/B/B-1.jpg" alt="Item">
+            </div>
+            <div class="menu-item-price">$10.95<span> (pint)</span> $14.95 <span>(quart)</span></div>
+          </div>
+          <div class="menu-item-description col-sm-7">
+            <h3 class="menu-item-title">Veal with Mixed Vegetables</h3>
+            <p class="menu-item-details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque inventore esse minima incidunt impedit. Asperiores, voluptatem. Sint aspernatur provident, rem odio dolorem eaque voluptatibus modi reprehenderit minima, itaque cupiditate totam.Asperiores, voluptatem. Sint aspernatur provident, rem odio dolorem eaque voluptatibus modi reprehenderit minima, itaque cupiditate totam.Asperiores, voluptatem. Sint aspernatur provident, rem odio dolorem eaque voluptatibus modi reprehenderit minima, itaque cupiditate totam.</p>
+          </div>
+        </div>
+        <hr class="visible-xs">
+      </div>
+
+      <div class="menu-item-tile col-md-6">
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="menu-item-photo">
+              <div>D02</div>
+              <img class="img-responsive" width="250" height="150" src="images/menu/B/B-1.jpg" alt="Item">
+            </div>
+            <div class="menu-item-price">$10.95<span> (pint)</span> $14.95 <span>(quart)</span></div>
+          </div>
+          <div class="menu-item-description col-sm-7">
+            <h3 class="menu-item-title">Veal with Mixed Vegetables</h3>
+            <p class="menu-item-details">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque inventore esse minima incidunt impedit. Asperiores, voluptatem. Sint aspernatur provident, rem odio dolorem eaque voluptatibus modi reprehenderit minima, itaque cupiditate totam.</p>
+          </div>
+        </div>
+        <hr class="visible-xs">
+      </div>
+      <!-- Add after every 2nd menu-item-tile -->
+      <div class="clearfix visible-lg-block visible-md-block"></div>		#bootstrap way to clear and align all the floating elements uniformly
+
+    </section>
+
+  </div><!-- End of #main-content -->
+  
+#Java script
+
+console.log()		#log the argument to the console in dev tools		#retur type is undefined
+var v="anlj";		#var is used to define a variable and is dyamically typed
+function a(x,y){		#function is used to define the function "a" #no var is defined for the parametrs	#scope chain dependsonwhere the function is defined rather thn wehre its called
+	return x>y;
+}
+or
+var a=function(){};
+
+a();		#calling function #even if the function has argumnets, calling function can have no parameters
+
+var x;		#here, x is undefined as no value is defined yet
+firsname:"hello";		#object datatype
+"hello" + "world"		#string concatination
+undefined+5				#gives a NaN(not a number)
+'4'==4					#this is type coersion where the string is cnveerted to number and is compared hence the output is Trus
+'4'===4					#strict equality only compares same datatype hence returns False
+||						#or operator
+False,NaN,undefined,"",0,null		#all are false values
+boolean(NaN);			#returns the boolan value ofthe object parsed
+&&			#and operator
+true,"some",1,-1,'false'		#all return true value
+for loop		#similr to c program
+s=s||"whatever"			#sets s to default of whatever
+
+var a = new object();		#create new object
+a.fir="asd"		#the fir property of the a object is set to asd
+a.fir.edo.edf			
+a.fir.edo.onc			#the object can have other objects
+a["fir"]		#this is used sothat property names that are not valid also can be used		#eg. a["f i r"]
+var a{
+	fir:"asd",
+	edo:{
+	edf:
+	onc:
+	}
+	
+};		#other way of represeting the object
+
+function makeMultiplier(multiplier) {
+  var myFunc = function (x) {
+    return multiplier * x;			#this is possible because of closures which traps the environment of the myFunc even though the makeMultiplier function is removed from the environment		#so, when the doubleAll function is called the multiplier variale is extracted from the outer trapped environment.
+  };
+
+  return myFunc;
+}
+
+var multiplyBy3 = makeMultiplier(3);
+console.log(multiplyBy3(10));
+var doubleAll = makeMultiplier(2);
+console.log(doubleAll(100));			 
+
+#primitives are passed by valu 	#objects are passed by reference 
+
+function a(){
+	consol.log(this);		#'this' object points to the global object i.e, window
+}
+a()
+
+function a(){
+	consol.log(this);		#'this' object points to the local object i.e, a because while calling, a new object is created.
+}
+
+var b= new a()			
+
+a.prototype.c = function(){		#prototype is used when creating the function object when don't want to create these functions each time a new object is created  
+	return 1+2;
+} 								#it should be defined outside the a() declaration	#can only used for function constructor i.e, function object
+
+var a={
+	b:12;
+	c:function(){
+		var self=this
+		var x= function(){
+			console.log(this)	#points to the window
+			console.log(self)	#points to the a object	
+		};
+		console.log(this);		#hre, this points to the a object insted of the global(window)
+	};
+}
+
+var a=new Array();
+or
+var a=[];		#creates an array
+a[0]="efa";
+a[1]=5;
+a[0]=function(){
+console,log("heklkcl")
+};
+a[0]={
+b:"jdnlj";
+}; 						#all are valid operations
+
+a.length 	#ives the length of teh array
+a[100]="zlkndcl"		#is possible but all the middle elements are set to undefined
+a.anotherprop="asasd"	#is also possible and it becomes the new property and can be looped over
+
+var a={
+b:"as"
+};
+for (p in a){		#similar to python
+	console.log(p+": "+a.p)		#displays b: as
+}
+
+#a var a in one script can be overwritten by var a in another script that is declared after the first one.	#any operation in the script1 related to the variable would be changed to the variable declared in the 2nd script
+
+(function (){
+					#IIFEs would be callled as soon as declared	#this could help in using same variables in different scripts as the IIFEs have their own environment and donot collide with the other variable in the 2nd script
+})();
+
+document		#object that contains the whole html 
+document.getElementById("id")		#extracts the element with id="id"
+
+onclick="sayHello();"		#an attribute that can trigger the respective js command on clicks		#the funtion has the parameter event
+onblur="sayHello();"		#when the focusis lost on the element
+document.getElementById("id").value		#extracts the value of that element
+document.getElementById("id").textContent=message;		#sets the text in the id element to the text in the message as text
+document.getElementById("id").innerHTML=message;		#sets the text in the id element to the text in the message as a html
+
+document.querrySelector("#id")		#selects the element based on the css selectors	#sselcts the first element that matches the querry 	#if we want to select multiple querry then can use querryAllSelector?
+
+document.querrySelector("button").addEventListener("click",sayHello);		
+or
+document.querrySelector("button").onclick=sayHello;			#is executed in the js and the context of the sayHello function is the button element
+document.addEventListener("DOMContentLoaded",
+function (event){}											#loads all these functions before the html elements are loaded		#when the script is defined in the title
+); 
+
+if (global.XMLHttpRequest) {			#checks the type of object available in the browser currently		#object used to request
+    return (new XMLHttpRequest());		#return a new object of that type
+  } 
+  
+ajaxUtils.sendGetRequest = 
+  function(requestUrl, responseHandler) {			#sendGetRequest function expects the where the request url is on the server		#responseHandler handles the result of the server
+    var request = getRequestObject();				#gets the new request object
+    request.onreadystatechange = 					#different stages in the network communication between the browser and the server
+      function() { 
+        handleResponse(request, responseHandler); 	#this function executes evry time a server responds		#used as a function to avoid race condition
+      };
+    request.open("GET", requestUrl, true);			#true to make the request asynchronus
+    request.send(null); // for POST only			#null because for get no message is sent only used when sending post body
+  };
+  
+function handleResponse(request,
+                        responseHandler) {
+  if ((request.readyState == 4) &&					#makes sure that there are 4 states that are ready and the request is in the last state
+     (request.status == 200)) {						#if server executes the given ommand successfully
+    responseHandler(request);						
+  }
+}
+
+$ajaxUtils
+          .sendGetRequest("data/name.txt", 
+            function (request) {					#request contains the responce from the server
+              var name = request.responseText;		#the responseText property of the request object holds the response from the server
+              document.querySelector("#content")
+                .innerHTML = "<h2>Hello " + name + "!</h2>";		#this is here because if it was outside nothing would be printed because this is an asynchronus communication
+            });
+      });
+
+#json is a data-interchange format		#is a subset of js onject literal syntax	#it can be accessed in js as astring in single quotes
+#json is not a js object literal		#to extract an object we have to convert json to js object
+
+var obj=JSON.parse(jsonstring);		#convert json string to json object
+var str=JSON.stringify(obj);		#convert json obj to json string
+
+ $ajaxUtils
+          .sendGetRequest("data/name.json", 
+            function (res) {								#res is a js object to extract te json object #lecture 58 for further convertions
+              var message = 
+                res.firstName + " " + res.lastName
+              if (res.likesChineseFood) {
+                message += " likes Chinese food";
+              }
+              else {
+                message += " doesn't like Chinese food";
+              }
+              message += " and uses ";
+              message += res.numberOfDisplays + 1;
+              message += " displays for coding.";
+
+              document.querySelector("#content")
+                .innerHTML = "<h2>" + message + "</h2>";
+            });
+			
+$(function () { //$ is Same as document.addEventListener("DOMContentLoaded"...			#$ is te jquerry function
+
+  //$ here is Same as document.querySelector("#navbarToggle").addEventListener("blur",...
+  $("#navbarToggle").blur(function (event) {
+    var screenWidth = window.innerWidth;
+    if (screenWidth < 768) {						#checks if the browser size is les than 768
+    }
+  });
+  
+(function (global) {
+
+var dc = {};
+
+var homeHtml = "snippets/home-snippet.html";					#where all the snippets are stiored
+
+// Convenience function for inserting innerHTML for 'select'
+var insertHtml = function (selector, html) {					#to inset the snippet to that selector
+  var targetElem = document.querySelector(selector);			
+  targetElem.innerHTML = html;
+};
+
+// Show loading icon inside element identified by 'selector'.
+var showLoading = function (selector) {
+  var html = "<div class='text-center'>";
+  html += "<img src='images/ajax-loader.gif'></div>";			#display loading icon
+  insertHtml(selector, html);
+};
+
+// On page load (before images or CSS)
+document.addEventListener("DOMContentLoaded", function (event) {
+
+// On first load, show home view
+showLoading("#main-content");
+$ajaxUtils.sendGetRequest(
+  homeHtml,									#whsre all the snippets are stored
+  function (responseText) {					#retrieve the snippets 
+    document.querySelector("#main-content")
+      .innerHTML = responseText;
+  },
+  false);									#to notify that the file is not a json file
+});
+
+
+global.$dc = dc;
+
+})(window);
+
+var insertProperty = function (string, propName, propValue) {			#take the the snippet as string and replace all the propName with propValue
+    var propToReplace = "{{" + propName + "}}";
+    string = string.replace(new RegExp(propToReplace, "g"), propValue);	#the regular expression replaces the all the ('g') propToReplace with propValue
+    return string;
+  };
